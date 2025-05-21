@@ -10,7 +10,7 @@ if __name__ == "__main__":
 
     video_id = sys.argv[1]
     client = YouTubeClient()
-    comments = client.get_comments(video_id)
+    comments = client.fetch_comment_threads(video_id)
 
     Path("data").mkdir(exist_ok=True)
     with open("data/sample_comments.json", "w", encoding="utf-8") as f:
